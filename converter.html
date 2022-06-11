@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Header starts -->
+    <div class="container">
+        <div class="pt-5">
+            <center><h2><b><u>Currency Converter App</u></b></h2></center>
+        </div>
+        <!-- form strats -->
+
+        <!-- First row starts -->
+        <div class="row pt-5">
+            <!-- amount start -->
+                <div class="col-1">
+                    <label style="margin-right: 10px;" for="amount">Amount</label>
+                </div>
+                <div class="col-2">
+                    <input class="form-control" type="number" id="amount">
+                </div>
+            <!-- amount ends -->
+
+            <!-- From starts -->
+                <div class="col-1">
+                    <label style="margin-right: 20px;" for="from">From</label>
+                </div>
+                <div class="col-2">
+                    <select class="form-control" style="width: 60%;" name="from" id="from">
+                        <option selected disabled value="usd">Select...</option>
+                        <option value="USD">USD</option>
+                        <option value="RS">Rs</option>
+                        <option value="BDT">BDT</option>
+                    </select>
+                </div>
+            <!-- From ends -->
+
+            <!-- To starts -->
+            <div class="col-1">
+                <center>
+                    <label style="margin-right: 20px;" for="To">To</label>
+                </center>
+            </div>
+            <div class="col-2">
+                <select class="form-control" style="width: 60%;" name="to" id="to">
+                    <option selected disabled value="usd">Select...</option>
+                    <option value="USD">USD</option>
+                    <option value="RS">Rs</option>
+                    <option value="BDT">BDT</option>
+                </select>
+            </div>
+            <!-- To ends -->
+
+            <!-- Button starts -->
+            <div class="col-3">
+                <center><button type="button" class="btn btn-primary" onclick="convert()">Convert</button></center>
+            </div>
+            <!-- Button Ends -->
+
+        </div>
+        <!-- first row ends -->
+        <div class="row pt-5">
+            <div class="col-3">
+                <label for="amount">Your Converted Amount is : </label>
+            </div>
+            <div class="col-8">
+                <input class="form-control" type="text" id="output">
+            </div>
+        </div>
+        <!-- Form ends -->
+        
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script>
+        // alert("Hello World");
+        function convert(){
+            var am = document.getElementById("amount").value;
+            var fr = document.getElementById("from").value;
+            var t = document.getElementById("to").value;
+            // alert(am + " " + fr+ " " +t);
+            var result = t ;
+
+            if(fr == "USD"){
+                if(t == "BDT"){
+                    result = result + " " +am*100;
+                    document.getElementById("output").value = result;
+                }
+                else
+                result = result + " " +am*78.18;
+                document.getElementById("output").value = result;
+            }
+            else if(fr == "BDT"){
+                if(t == "USD"){
+                    result = result + " " +am/100;
+                    document.getElementById("output").value = result;
+                }
+                else
+                    result = result + " " +am*0.84;
+                    document.getElementById("output").value = result;
+            }
+            else{
+                if(t == "USD"){
+                    result = result + " " +am/78.18;
+                    document.getElementById("output").value = result;
+                }
+                else
+                    result = result + " " +am/0.84;
+                    document.getElementById("output").value = result;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
