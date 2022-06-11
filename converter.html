@@ -39,63 +39,65 @@
         <!-- form strats -->
 
         <!-- First row starts -->
-        <div class="row pt-5">
-            <!-- amount start -->
+        <div style="background-color: burlywood; padding:30px; border-radius: 10px;">
+            <div class="row pt-5" style="background-color: gray; padding:20px; border-radius: 10px;">
+                <!-- amount start -->
+                    <div class="col-1">
+                        <label style="margin-right: 10px;" for="amount">Amount</label>
+                    </div>
+                    <div class="col-2">
+                        <input class="form-control" type="number" id="amount">
+                    </div>
+                <!-- amount ends -->
+    
+                <!-- From starts -->
+                    <div class="col-1">
+                        <label style="margin-right: 20px;" for="from">From</label>
+                    </div>
+                    <div class="col-2">
+                        <select class="form-control" style="width: 60%;" name="from" id="from">
+                            <option selected disabled value="usd">Select...</option>
+                            <option value="USD">USD</option>
+                            <option value="RS">Rs</option>
+                            <option value="BDT">BDT</option>
+                        </select>
+                    </div>
+                <!-- From ends -->
+    
+                <!-- To starts -->
                 <div class="col-1">
-                    <label style="margin-right: 10px;" for="amount">Amount</label>
+                    <center>
+                        <label style="margin-right: 20px;" for="To">To</label>
+                    </center>
                 </div>
                 <div class="col-2">
-                    <input class="form-control" type="number" id="amount">
-                </div>
-            <!-- amount ends -->
-
-            <!-- From starts -->
-                <div class="col-1">
-                    <label style="margin-right: 20px;" for="from">From</label>
-                </div>
-                <div class="col-2">
-                    <select class="form-control" style="width: 60%;" name="from" id="from">
+                    <select class="form-control" style="width: 60%;" name="to" id="to">
                         <option selected disabled value="usd">Select...</option>
                         <option value="USD">USD</option>
                         <option value="RS">Rs</option>
                         <option value="BDT">BDT</option>
                     </select>
                 </div>
-            <!-- From ends -->
-
-            <!-- To starts -->
-            <div class="col-1">
-                <center>
-                    <label style="margin-right: 20px;" for="To">To</label>
-                </center>
+                <!-- To ends -->
+    
+                <!-- Button starts -->
+                <div class="col-3">
+                    <center><button type="button" class="btn btn-primary" onclick="convert()">Convert</button></center>
+                </div>
+                <!-- Button Ends -->
+    
             </div>
-            <div class="col-2">
-                <select class="form-control" style="width: 60%;" name="to" id="to">
-                    <option selected disabled value="usd">Select...</option>
-                    <option value="USD">USD</option>
-                    <option value="RS">Rs</option>
-                    <option value="BDT">BDT</option>
-                </select>
+            <!-- first row ends -->
+            <div class="row pt-5" style="background-color: lightblue; padding:20px; border-radius: 10px;">
+                <div class="col-3">
+                    <label for="amount">Your Converted Amount is : </label>
+                </div>
+                <div class="col-8">
+                    <input class="form-control" type="text" id="output">
+                </div>
             </div>
-            <!-- To ends -->
-
-            <!-- Button starts -->
-            <div class="col-3">
-                <center><button type="button" class="btn btn-primary" onclick="convert()">Convert</button></center>
-            </div>
-            <!-- Button Ends -->
-
+            <!-- Form ends -->
         </div>
-        <!-- first row ends -->
-        <div class="row pt-5">
-            <div class="col-3">
-                <label for="amount">Your Converted Amount is : </label>
-            </div>
-            <div class="col-8">
-                <input class="form-control" type="text" id="output">
-            </div>
-        </div>
-        <!-- Form ends -->
         
     </div>
     <!-- JavaScript Bundle with Popper -->
